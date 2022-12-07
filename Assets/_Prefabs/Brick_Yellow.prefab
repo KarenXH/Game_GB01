@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1997639465027051667}
   - component: {fileID: 6892301742487801007}
   - component: {fileID: 2770951331866407019}
+  - component: {fileID: 2543146423563073770}
   m_Layer: 0
   m_Name: Brick_Yellow
   m_TagString: Brick
@@ -133,3 +134,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2543146423563073770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645213873475958830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d7574e37cb43343bb5fe7bb2839383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  minScore: 0
+  maxScore: 0
+  ballHittedVfx: {fileID: 3953874820360800174, guid: e0e5d1a74a3c7ec4daa7b950d01d1fa3, type: 3}

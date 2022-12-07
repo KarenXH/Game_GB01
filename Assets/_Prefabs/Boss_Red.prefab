@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1257150408084388997}
   - component: {fileID: 6155610119505498297}
   - component: {fileID: 3224336191737080957}
+  - component: {fileID: 1055499709271479643}
   m_Layer: 0
   m_Name: Boss_Red
   m_TagString: Brick
@@ -133,3 +134,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1055499709271479643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161852207758992440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d7574e37cb43343bb5fe7bb2839383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  minScore: 0
+  maxScore: 0
+  ballHittedVfx: {fileID: 3953874820360800174, guid: 2f39f9dc830e0ec4285613d0a5d153ad, type: 3}
