@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ball
+  - Sticker
+  - DeadZone
+  - Brick
+  - Wall_T
+  - Wall_L
+  - Wall_R
   layers:
   - Default
   - TransparentFX
@@ -38,6 +45,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1644841723
+    locked: 0
+  - name: ForceGround
+    uniqueID: 1704105645
+    locked: 0
+  - name: Front
+    uniqueID: 2865733951
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
