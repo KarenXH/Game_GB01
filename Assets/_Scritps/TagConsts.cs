@@ -9,6 +9,6 @@ public static class TagConsts
     public const string DEAD_ZONE = "DeadZone";
     public const string BRICK = "Brick";
     public const string WALL_TOP = "Wall_T";
-    public const string WALL_lEFT = "Wall_L";
+    public const string WALL_LEFT = "Wall_L";
     public const string WALL_RIGHT = "Wall_R";
 }
