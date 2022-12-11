@@ -9,8 +9,11 @@ public class GameManager : Singleton<GameManager>
 
     float _curTimeDelay;
     int _level;
+    int _score;
+    BricksManager _levelObj;
 
-    public int Level { get => _level; set => _level = value; }
+    public int Level { get => _level;}
+    public BricksManager LevelObj { get => _levelObj; }
 
     public override void Awake()
     {
@@ -25,6 +28,18 @@ public class GameManager : Singleton<GameManager>
 
     IEnumerator CountingDown()
     {
+        BricksManager[] levelPrefabs = LevelsManager.Ins.levelPrefabs;
+        if (levelPrefabs != null && levelPrefabs.Length > 0 && levelPrefabs.Length>LevelsManager.Ins.CurLevel)
+        {
+            BricksManager levelPrefab = levelPrefabs[LevelsManager.Ins.CurLevel];
+
+            if (levelPrefab != null)
+            {
+                _level = LevelsManager.Ins.CurLevel;
+                _levelObj = Instantiate(levelPrefab, Vector3.zero, Quaternion.identity);
+            }
+        }
+
         while(_curTimeDelay > 0)
         {
             yield return new WaitForSeconds(1f);
@@ -35,5 +50,12 @@ public class GameManager : Singleton<GameManager>
         { 
             ball.Trigger(); 
         }
+    }
+
+    public void AddScore(int scoreToAdd)
+    {
+        _score += scoreToAdd;
+
+        Prefs.bestScore = _score;
     }
 }
