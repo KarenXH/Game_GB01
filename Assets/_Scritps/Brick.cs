@@ -10,7 +10,7 @@ public class Brick : MonoBehaviour
     public GameObject ballHittedVfx;
 
     public int ScoreBonus {
-        get => Random.Range(minScore, maxScore) * GameManager.Ins.Level;
+        get => Random.Range(minScore, maxScore) * (GameManager.Ins.Level +1);
     }
 
     public void Hit()
@@ -22,6 +22,8 @@ public class Brick : MonoBehaviour
             if (ballHittedVfx)
             {
                 Instantiate(ballHittedVfx, transform.position, Quaternion.identity);
+
+                GameManager.Ins.AddScore(ScoreBonus);
                 Destroy(gameObject);
             }
         }
