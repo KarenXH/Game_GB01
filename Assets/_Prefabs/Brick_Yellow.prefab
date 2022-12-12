@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d7574e37cb43343bb5fe7bb2839383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  minScore: 0
-  maxScore: 0
+  health: 1
+  minScore: 3
+  maxScore: 5
   ballHittedVfx: {fileID: 3953874820360800174, guid: e0e5d1a74a3c7ec4daa7b950d01d1fa3, type: 3}

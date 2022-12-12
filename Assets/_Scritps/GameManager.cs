@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public float timeDelay;
+    public int timeDelay;
     public Ball ball;
 
-    float _curTimeDelay;
+    int _curTimeDelay;
     int _level;
     int _score;
     BricksManager _levelObj;
@@ -24,6 +24,10 @@ public class GameManager : Singleton<GameManager>
         _curTimeDelay = timeDelay;
 
         StartCoroutine(CountingDown());
+
+        Prefs.newBestScore = false;
+
+        GameGUIManager.Ins.UpdateScore(_score);
     }
 
     IEnumerator CountingDown()
@@ -44,12 +48,16 @@ public class GameManager : Singleton<GameManager>
         {
             yield return new WaitForSeconds(1f);
             _curTimeDelay--;
+
+            GameGUIManager.Ins.UpdateTimeCountingdown(_curTimeDelay);
         }
 
         if (ball) 
         { 
             ball.Trigger(); 
         }
+
+        Prefs.SetGameEntered(true);
     }
 
     public void AddScore(int scoreToAdd)
@@ -57,5 +65,7 @@ public class GameManager : Singleton<GameManager>
         _score += scoreToAdd;
 
         Prefs.bestScore = _score;
+
+        GameGUIManager.Ins.UpdateScore(_score);
     }
 }
