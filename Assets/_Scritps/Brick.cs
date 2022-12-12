@@ -24,6 +24,18 @@ public class Brick : MonoBehaviour
                 Instantiate(ballHittedVfx, transform.position, Quaternion.identity);
 
                 GameManager.Ins.AddScore(ScoreBonus);
+
+                if (GameManager.Ins.LevelObj != null && GameManager.Ins.LevelObj.bricks != null)
+                {
+                    GameManager.Ins.LevelObj.bricks.Remove(this);
+
+                    if (GameManager.Ins.LevelObj.bricks != null && GameManager.Ins.LevelObj.bricks.Count <= 0)
+                    {
+                        Prefs.SetLevelPassed(LevelsManager.Ins.CurLevel, true);
+                        Prefs.SetLevelUnlocked(LevelsManager.Ins.CurLevel + 1, true);
+                        GameGUIManager.Ins.winDialog.Show(true);
+                    }
+                }
                 Destroy(gameObject);
             }
         }
