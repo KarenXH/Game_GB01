@@ -28,6 +28,8 @@ public class GameManager : Singleton<GameManager>
         Prefs.newBestScore = false;
 
         GameGUIManager.Ins.UpdateScore(_score);
+
+        AudioController.Ins.PlayBackgroundMusic();
     }
 
     IEnumerator CountingDown()
@@ -48,6 +50,11 @@ public class GameManager : Singleton<GameManager>
         {
             yield return new WaitForSeconds(1f);
             _curTimeDelay--;
+
+            if (_curTimeDelay > 0)
+                AudioController.Ins.PlaySound(AudioController.Ins.timeBeep);
+            else
+                AudioController.Ins.PlaySound(AudioController.Ins.ballStartTrigger);
 
             GameGUIManager.Ins.UpdateTimeCountingdown(_curTimeDelay);
         }

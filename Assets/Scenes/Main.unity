@@ -2552,13 +2552,14 @@ MonoBehaviour:
   sfxVolume: 1
   musicAus: {fileID: 566870430}
   sfxAus: {fileID: 566870429}
-  bounci: {fileID: 0}
-  lose: {fileID: 0}
-  win: {fileID: 0}
-  hitDeadZone: {fileID: 0}
-  timeBeep: {fileID: 0}
-  ballStartTrigger: {fileID: 0}
-  backgroundMusics: []
+  bounci: {fileID: 8300000, guid: e9ce900a7532ff948a8cc05b118499b2, type: 3}
+  lose: {fileID: 8300000, guid: 0636bb291816ebe45ac19d494451d85c, type: 3}
+  win: {fileID: 8300000, guid: 95750eb38080a2a4e8f28be0df5c86e2, type: 3}
+  hitDeadZone: {fileID: 8300000, guid: 13cfeac7557aaff4c9387ea2c2bf989a, type: 3}
+  timeBeep: {fileID: 8300000, guid: 7ee86b095ab75404c8ad8195fa2eaf82, type: 3}
+  ballStartTrigger: {fileID: 8300000, guid: 1f9530f06c24aa647b5ad653b43284b9, type: 3}
+  backgroundMusics:
+  - {fileID: 8300000, guid: 30a482d73a6a7b04583fc9da058e9adb, type: 3}
 --- !u!4 &566870432
 Transform:
   m_ObjectHideFlags: 0
@@ -2978,6 +2979,7 @@ GameObject:
   - component: {fileID: 686186272}
   - component: {fileID: 686186271}
   - component: {fileID: 686186270}
+  - component: {fileID: 686186273}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3044,13 +3046,47 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686186269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.67352104, y: -0.8185916, z: -10.586163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686186273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686186269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &687026576
 GameObject:
   m_ObjectHideFlags: 0

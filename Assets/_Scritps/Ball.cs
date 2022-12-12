@@ -104,12 +104,21 @@ public class Ball : MonoBehaviour
         }
     }
 
+    IEnumerator OpenGameoverDialog()
+    {
+        yield return new WaitForSeconds(1f);
+        GameGUIManager.Ins.gameoverDialog.Show(true);
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag(TagConsts.DEAD_ZONE))
         {
-            GameGUIManager.Ins.gameoverDialog.Show(true);
-            Destroy(gameObject);
+            CineController.Ins.ShakeTrigger();
+            AudioController.Ins.PlaySound(AudioController.Ins.hitDeadZone);
+            StartCoroutine(OpenGameoverDialog());
+            
         }
     }
 }
