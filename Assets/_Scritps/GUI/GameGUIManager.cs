@@ -9,6 +9,10 @@ public class GameGUIManager : Singleton<GameGUIManager>
     public Text scoreText;
     public Text timeCountingdownText;
 
+    public PauseDialog pauseDialog;
+    public WinDialog winDialog;
+    public GameoverDialog gameoverDialog;
+
     public override void Awake()
     {
         MakeSingleton(false);
@@ -39,4 +43,11 @@ public class GameGUIManager : Singleton<GameGUIManager>
     {
         SceneManager.LoadScene(SceneConsts.MAIN);
     }
+
+    public void PauseGame()
+    {
+        if (pauseDialog)
+            pauseDialog.Show(true);
+    }
+
 }

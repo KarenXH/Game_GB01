@@ -103,4 +103,13 @@ public class Ball : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag(TagConsts.DEAD_ZONE))
+        {
+            GameGUIManager.Ins.gameoverDialog.Show(true);
+            Destroy(gameObject);
+        }
+    }
 }
