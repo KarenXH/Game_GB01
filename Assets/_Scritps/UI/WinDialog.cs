@@ -23,6 +23,8 @@ public class WinDialog : Dialog
                 bestScoreText.text = "BEST SCORE: " + Prefs.bestScore.ToString("n0");
             }
         }
+
+        AudioController.Ins.PlaySound(AudioController.Ins.win);
     }
 
     public void HomeBtn()

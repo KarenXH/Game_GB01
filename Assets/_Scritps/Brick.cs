@@ -39,5 +39,6 @@ public class Brick : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        AudioController.Ins.PlaySound(AudioController.Ins.bounci);
     }
 }
