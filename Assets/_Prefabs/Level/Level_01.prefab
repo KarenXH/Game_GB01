@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bricks:
   - {fileID: 6683320298774338350}
+  - {fileID: 6683320298774338350}
   - {fileID: 3502820734360977581}
   - {fileID: 6965064317908159611}
   - {fileID: 209242136790245815}
